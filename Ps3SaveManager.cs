@@ -47,7 +47,7 @@ namespace PS3SaveManager
             if (File.Exists(Path.Combine(savedir, "ICON0.PNG")))
             {
                 //prevent file lock,reading to memory instead.
-                SaveImage = Image.FromStream(new MemoryStream(File.ReadAllBytes(savedir + "ICON0.PNG")));
+                SaveImage = Image.FromStream(new MemoryStream(File.ReadAllBytes(Path.Combine(savedir, "ICON0.PNG"))));
             }
 
             Files = (from ent in Param_PFD.Entries
