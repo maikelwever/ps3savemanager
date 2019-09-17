@@ -785,9 +785,12 @@ namespace PS3SaveManager
             if (!stream.CanRead || !stream.CanWrite)
                 throw new Exception("Unable to Access stream");
 
+            /*
+             * This is currently disabled, since I got a lot of false-positives.
             if (!ValidEntryHash(stream, entryname, false))
                 throw new Exception(
                     "Encrypted data seems to be invalid, a validated file is required for this operation");
+            */
 
             var size = AlignedSize((int)stream.Length);
             DoProgress("Allocating memory (" + size + " bytes)..", MessageType.Info);
